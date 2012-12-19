@@ -160,13 +160,21 @@ a img {border: none;} /* Gets rid of IE's blue borders */
   text-transform: uppercase;
 }
 
+#rightcontent h2 {
+  text-align: left;
+}
+
+#leftcontent h2 {
+  text-align: right;
+}
+
 a {
   font-weight: 700;
   text-decoration: underline;
   color: inherit;
 }
 
-a:hover {
+#rightcontent a:hover, #leftcontent a:hover {
   opacity: 0.7;
 }
 
@@ -255,6 +263,7 @@ em {
 }
 
 #links a:hover {
+  opacity: 1;
   margin: .8em .8em 0 0;
   background-color: #f25d50;
   box-shadow: 1px -1px #f28f87;
@@ -262,6 +271,10 @@ em {
 
 #links {
   text-align: left;
+}
+
+#leftcontent #links {
+  text-align: right;
 }
 
 #links h2 {
