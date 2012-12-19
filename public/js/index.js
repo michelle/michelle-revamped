@@ -20,7 +20,7 @@ $(document).ready(function() {
     var div = $(this).attr('id').split('_').pop();
 
 
-    $(other + '> div').stop().animate({ opacity: .25 }, 300, function() {
+    $(other + '> div').stop().animate({ opacity: .15 }, 300, function() {
       $(target + ' > div').stop().animate({ opacity: 1.0 }, 300);
     });
     $(target).stop().hide('slide', { direction: direction }, 300,
@@ -35,11 +35,9 @@ $(document).ready(function() {
     if (right) {
       $('#middlebox').stop().animate({ left: '-12em' }, 300);
       right = false;
-      shown;
     } else {
       $('#middlebox').stop().animate({ left: '0em' }, 300);
       right = true;
-      shown = true;
     }
 
     index += 1;

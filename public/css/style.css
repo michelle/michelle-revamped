@@ -46,7 +46,7 @@ a img {border: none;} /* Gets rid of IE's blue borders */
   -ms-user-select: none;
   user-select: none;
   position: relative;
-  margin: 23% auto 0 auto;
+  margin: 15em auto 0 auto;
   width: .001em;
   height: 15em;
   z-index: 100;
@@ -56,12 +56,11 @@ a img {border: none;} /* Gets rid of IE's blue borders */
   position: absolute;
   left: -6em;
   width: 12.5em;
-  height: 15em;
 }
 
 #over {
   position: absolute;
-  height: 14.5em;
+  min-height: 14.5em;
   width: 12em;
   box-shadow: -1px 1px #e4c35f,
               -2px 2px #e4c35f,
@@ -139,6 +138,7 @@ a img {border: none;} /* Gets rid of IE's blue borders */
 }
 
 #about, #links, #projects {
+  height: 90%;
   text-align: justify;
   max-height: 90%;
   overflow: scroll;
@@ -169,8 +169,12 @@ a img {border: none;} /* Gets rid of IE's blue borders */
 }
 
 a {
-  font-weight: 700;
+  text-decoration: none;
+}
+
+#about a {
   text-decoration: underline;
+  font-weight: 700;
   color: inherit;
 }
 
@@ -242,7 +246,72 @@ em {
 }
 
 
-/** Link buttons */
+
+/** Projects stylings */
+.project {
+  box-shadow: 1px -1px #737373,
+              -1px 1px #404040,
+              -2px 2px #404040,
+              -3px 3px #404040,
+              -4px 4px #404040,
+              -5px 5px #404040,
+              -6px 6px #404040,
+              -10px 6px 1px rgba(0,0,0,0.1);
+  background-color: #4d4d4d;
+  padding: 1em;
+  color: #f4f2d2;
+  text-shadow: 0px 1px 0px #404040;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  margin: 10px;
+  font-size: 0.8em;
+}
+
+.project h3 {
+  margin: 0;
+  padding: 0 0 .5em 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.3em
+}
+
+.project img {
+  float: left;
+  margin: 0 1em 1em 0;
+  width: 10em;
+  box-shadow: 1px -1px #737373,
+              -1px 1px #404040,
+              -2px 2px #404040,
+              -3px 3px #404040,
+              -4px 4px #404040,
+              -8px 4px 1px rgba(0,0,0,0.1);
+}
+
+.project h3 .details {
+  font-size: 0.5em;
+  color: #f25d50;
+  display: inline-block;
+  float: right;
+  background-color: #404040;
+  padding: .2em .8em;
+}
+
+.project {
+  text-decoration: none !important;
+}
+
+.project a:hover {
+  opacity: 1.0;
+}
+
+.project:hover {
+  margin: 14px 14px 6px 6px;
+  box-shadow: none;
+}
+
+
+
+/** Links stylings */
 #links a {
   display: inline-block;
   text-decoration: none;
@@ -250,7 +319,7 @@ em {
   padding: .1em .8em 0 .8em;
   color: #f2d785;
   font-size: 1.2em;
-  margin: .4em;
+  margin: 10px;
   background-color: #f25d50;
   box-shadow: 1px -1px #f28f87,
               -1px 1px #b83f3b,
@@ -264,7 +333,7 @@ em {
 
 #links a:hover {
   opacity: 1;
-  margin: .8em .8em 0 0;
+  margin: 14px 14px 6px 6px;
   background-color: #f25d50;
   box-shadow: 1px -1px #f28f87;
 }
@@ -283,6 +352,9 @@ em {
 
 
 /** Utilities */
+.clear {
+  clear: both;
+}
 .smallpadding {
   padding: 1.5em;
 }
