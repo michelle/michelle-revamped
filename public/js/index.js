@@ -1,12 +1,14 @@
 $(document).ready(function() {
   // Colors in order of showing:
-  var colors = ['#f4f2d2', '#638759', '#81a677', /** can break here */
-                '#f4f2d2', '#f25d50', '#b83f31']
+  var colors = [['#f4f2d2', 'pale'],
+                ['#638759', 'darkgreen'],
+                ['#81a677', 'lightgreen']];/** can break here
+                ['#f4f2d2', 'pale'],
+                ['#f25d50', 'lightred'],
+                ['#b83f31', 'darkred']];*/
   var index = 0;
   // Reveal right?
   var right = true;
-  // Have both been shown?
-  var shown = false;
 
   $('.open').click(function() {
     $('.active').removeClass('active');
@@ -17,12 +19,19 @@ $(document).ready(function() {
     var direction = right ? 'right' : 'left';
     var div = $(this).attr('id').split('_').pop();
 
-    $(target).css({ 'backgroundColor': colors[index] });
-    $(target + ' > div').stop().animate({ opacity: 1.0 }, 300);
-    $(other + '> div').stop().animate({ opacity: .25 }, 300);
-    if (shown) {
-      $(target).stop().hide('slide', { direction: direction }, 300);
-    }
+
+    $(other + '> div').stop().animate({ opacity: .25 }, 300, function() {
+      $(target + ' > div').stop().animate({ opacity: 1.0 }, 300);
+    });
+    $(target).stop().hide('slide', { direction: direction }, 300,
+      function() {
+        $(target).css({ 'backgroundColor': colors[index][0] });
+        $(target + ' > div').hide();
+        $(target + ' > #' + div).removeClass().addClass(colors[index][1]).show();
+        $(target).stop().show('slide', { direction: direction }, 300);
+      }
+    );
+
     if (right) {
       $('#middlebox').stop().animate({ left: '0' }, 300);
       right = false;
@@ -32,9 +41,6 @@ $(document).ready(function() {
       right = true;
       shown = true;
     }
-    $(target + ' > div').hide();
-    $(target + ' > ' + div).show();
-    $(target).stop().show('slide', { direction: direction }, 300);
 
     index += 1;
     if (index >= colors.length) {

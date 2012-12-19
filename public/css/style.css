@@ -11,16 +11,15 @@ a img {border: none;} /* Gets rid of IE's blue borders */
   width: 50%;
   top: 0px;
   z-index: 0;
+  background-color: #404040;
 }
 
 #right {
   right: 0;
-  background-color: #638759;
 }
 
 #left {
   left: 0;
-  background-color: #81a677;
 }
 
 
@@ -48,7 +47,7 @@ a img {border: none;} /* Gets rid of IE's blue borders */
 
 #middlebox {
   position: absolute;
-  left: 12em;
+  left: 6em;
   width: 12.5em;
   height: 15em;
 }
@@ -76,8 +75,7 @@ a img {border: none;} /* Gets rid of IE's blue borders */
 
 /** Content Boxes */
 #rightcontent, #leftcontent {
-  display: none;
-  background-color: #f4f2d2;
+  background-color: #81a677;
   width: 100%;
   height: 100%;
 }
@@ -115,16 +113,91 @@ a img {border: none;} /* Gets rid of IE's blue borders */
   cursor: pointer;
 }
 
-#over a:hover, #over .active {
+#over a:hover {
   text-shadow: 0px 1px #b83f3b;
   color: #f25d50;
 }
 
-#over a:active {
-  text-shadow: none;
+#over a:active, #over .active {
+  text-shadow: 0px 1px #f7e9bd;
   color: #b83f3b;
 }
 
+#about, #links, #projects {
+  display: none;
+  padding: 3em;
+}
+
+#about h2, #links h2, #projects h2 {
+  margin: 0 0 0.5em 0;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 0;
+  padding-top: 2em;
+  font-family: 'Josefin Sans';
+  text-transform: uppercase;
+}
+
+
+/** Layouts for content. */
+.pale, .darkgreen, .lightgreen, .darkred, .lightred {
+  font-size: 1.5em;
+  font-family: 'Josefin Sans';
+}
+
+.pale h2 {
+  color: #e0dda9;
+  text-shadow: 1px -1px #fff,
+              -1px 1px #c0bb6b,
+              -2px 2px #c0bb6b,
+              -3px 3px #c0bb6b,
+              -4px 4px #c0bb6b,
+              -6px 4px #e5e3bd;
+}
+.pale {
+  color: #4b4b4b;
+}
+
+.darkgreen h2 {
+  color: #81a677;
+  text-shadow: 1px -1px #a4c59b,
+              -1px 1px #48723d,
+              -2px 2px #48723d,
+              -3px 3px #48723d,
+              -4px 4px #48723d,
+              -6px 4px #5b7554;
+}
+.darkgreen {
+  color: #a4c59b;
+}
+
+.lightgreen h2 {
+  color: #cae5c3;
+  text-shadow: 1px -1px #fff,
+              -1px 1px #638759,
+              -2px 2px #638759,
+              -3px 3px #638759,
+              -4px 4px #638759,
+              -6px 4px #768e70;
+}
+.lightgreen {
+
+}
+
+.darkred h2 {
+  color: #f25d50;
+  text-shadow: 0px 1px 0px #8b221f;
+}
+.darkred {
+  color: #f4f2d2;
+}
+
+.lightred h2 {
+  color: #f2d785;
+  text-shadow: 0px 1px 0px #b83f3b;
+}
+.lightred {
+}
 
 /** Utilities */
 .smallpadding {
