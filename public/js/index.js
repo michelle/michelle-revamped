@@ -23,14 +23,16 @@ $(document).ready(function() {
     $(other + '> div').stop().animate({ opacity: .15 }, 300, function() {
       $(target + ' > div').stop().animate({ opacity: 1.0 }, 300);
     });
-    $(target).stop().hide('slide', { direction: direction }, 300,
-      function() {
-        $(target).css({ 'backgroundColor': colors[index][0] });
-        $(target + ' > div').hide();
-        $(target + ' > #' + div).removeClass().addClass(colors[index][1]).show();
-        $(target).stop().show('slide', { direction: direction }, 300);
-      }
-    );
+    (function(index) {
+      $(target).stop().hide('slide', { direction: direction }, 300,
+        function() {
+          $(target).css({ 'backgroundColor': colors[index][0] });
+          $(target + ' > div').hide();
+          $(target + ' > #' + div).removeClass().addClass(colors[index][1]).show();
+          $(target).stop().show('slide', { direction: direction }, 300);
+        }
+      );
+    })(index);
 
     if (right) {
       $('#middlebox').stop().animate({ left: '-12em' }, 300);
