@@ -19,11 +19,14 @@ $(document).ready(function() {
     var direction = right ? 'right' : 'left';
     var div = $(this).attr('id').split('_').pop();
 
-
-    $(other + '> div').stop().animate({ opacity: .15 }, 300, function() {
-      $(target + ' > div').stop().animate({ opacity: 1.0 }, 300);
-    });
-    (function(index) {
+    (function(target, other) {
+      $(other + '> div').stop().animate({ opacity: .15 }, 300, function() {
+        $(target + '> div').css({ 'pointer-events': 'auto' });
+        $(target + ' > div').stop().animate({ opacity: 1.0 }, 300);
+        $(other + '> div').css({ 'pointer-events': 'none' });
+      });
+    })(target, other);
+    (function(index, target) {
       $(target).stop().hide('slide', { direction: direction }, 300,
         function() {
           $(target).css({ 'backgroundColor': colors[index][0] });
@@ -32,7 +35,7 @@ $(document).ready(function() {
           $(target).stop().show('slide', { direction: direction }, 300);
         }
       );
-    })(index);
+    })(index, target);
 
     if (right) {
       $('#middlebox').stop().animate({ left: '-12em' }, 300);
