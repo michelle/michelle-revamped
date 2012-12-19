@@ -19,6 +19,7 @@ a img {border: none;} /* Gets rid of IE's blue borders */
 }
 
 #left {
+  z-index: 1;
   left: 0;
 }
 
@@ -87,6 +88,7 @@ a img {border: none;} /* Gets rid of IE's blue borders */
 }
 
 #leftcontent {
+  border-right: 1px solid #94bb89;
   background-color: #638759;
 }
 
@@ -108,6 +110,7 @@ a img {border: none;} /* Gets rid of IE's blue borders */
 }
 
 #over a {
+  text-decoration: none;
   text-shadow: 0px 1px #f7e9bd;
   font-family: 'Josefin Sans';
   color: #e4c35f;
@@ -159,12 +162,12 @@ a img {border: none;} /* Gets rid of IE's blue borders */
 
 a {
   font-weight: 700;
-  text-decoration: none;
-  color: #416774;
+  text-decoration: underline;
+  color: inherit;
 }
 
 a:hover {
-  text-decoration: underline;
+  opacity: 0.7;
 }
 
 em {
@@ -215,10 +218,6 @@ em {
   color: #cae5c3;
 }
 
-.darkgreen a {
-  color: #a6ddef;
-}
-
 .darkred h2 {
   color: #f25d50;
   text-shadow: 0px 1px 0px #8b221f;
@@ -233,6 +232,42 @@ em {
 }
 .lightred {
 }
+
+
+/** Link buttons */
+#links a {
+  display: inline-block;
+  text-decoration: none;
+  line-height: 2em;
+  padding: .1em .8em 0 .8em;
+  color: #f2d785;
+  font-size: 1.2em;
+  margin: .4em;
+  background-color: #f25d50;
+  box-shadow: 1px -1px #f28f87,
+              -1px 1px #b83f3b,
+              -2px 2px #b83f3b,
+              -3px 3px #b83f3b,
+              -4px 4px #b83f3b,
+              -5px 5px #b83f3b,
+              -6px 6px #b83f3b,
+              -10px 6px 1px rgba(0,0,0,0.1);
+}
+
+#links a:hover {
+  margin: .8em .8em 0 0;
+  background-color: #f25d50;
+  box-shadow: 1px -1px #f28f87;
+}
+
+#links {
+  text-align: left;
+}
+
+#links h2 {
+  padding-top: 3.5em;
+}
+
 
 /** Utilities */
 .smallpadding {
