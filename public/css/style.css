@@ -38,16 +38,22 @@ a img {border: none;} /* Gets rid of IE's blue borders */
 
 /** Center Areas */
 #middle {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   position: relative;
   margin: 23% auto 0 auto;
-  width: 24em;
+  width: .001em;
   height: 15em;
   z-index: 100;
 }
 
 #middlebox {
   position: absolute;
-  left: 6em;
+  left: -6em;
   width: 12.5em;
   height: 15em;
 }
@@ -114,6 +120,7 @@ a img {border: none;} /* Gets rid of IE's blue borders */
 }
 
 #over a:hover {
+  text-decoration: none;
   text-shadow: 0px 1px #b83f3b;
   color: #f25d50;
 }
@@ -123,26 +130,50 @@ a img {border: none;} /* Gets rid of IE's blue borders */
   color: #b83f3b;
 }
 
+#over .active:hover {
+  text-shadow: 0px 1px #f7e9bd;
+  color: #b83f3b;
+}
+
 #about, #links, #projects {
+  text-align: justify;
+  max-height: 90%;
+  overflow: scroll;
   display: none;
-  padding: 3em;
+  padding: 10%;
+  font-size: 1.2em;
+  font-family: 'Josefin Sans';
+  line-height: 1.3em;
 }
 
 #about h2, #links h2, #projects h2 {
-  margin: 0 0 0.5em 0;
+  margin: 0 0 0.2em 0;
   font-size: 2em;
+  line-height: 2em;
   font-weight: 700;
   padding: 0;
-  padding-top: 2em;
+  padding-top: 1.5em;
   font-family: 'Josefin Sans';
   text-transform: uppercase;
+}
+
+a {
+  font-weight: 700;
+  text-decoration: none;
+  color: #416774;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+em {
+  font-weight: 700;
 }
 
 
 /** Layouts for content. */
 .pale, .darkgreen, .lightgreen, .darkred, .lightred {
-  font-size: 1.5em;
-  font-family: 'Josefin Sans';
 }
 
 .pale h2 {
@@ -155,7 +186,7 @@ a img {border: none;} /* Gets rid of IE's blue borders */
               -6px 4px #e5e3bd;
 }
 .pale {
-  color: #4b4b4b;
+  color: #a19d55;
 }
 
 .darkgreen h2 {
@@ -181,7 +212,11 @@ a img {border: none;} /* Gets rid of IE's blue borders */
               -6px 4px #768e70;
 }
 .lightgreen {
+  color: #cae5c3;
+}
 
+.darkgreen a {
+  color: #a6ddef;
 }
 
 .darkred h2 {

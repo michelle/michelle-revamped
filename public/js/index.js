@@ -33,11 +33,11 @@ $(document).ready(function() {
     );
 
     if (right) {
-      $('#middlebox').stop().animate({ left: '0' }, 300);
+      $('#middlebox').stop().animate({ left: '-12em' }, 300);
       right = false;
       shown;
     } else {
-      $('#middlebox').stop().animate({ left: '12em' }, 300);
+      $('#middlebox').stop().animate({ left: '0em' }, 300);
       right = true;
       shown = true;
     }
