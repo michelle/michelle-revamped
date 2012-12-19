@@ -267,6 +267,9 @@ em {
 }
 
 .project h3 {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin: 0;
   padding: 0 0 .5em 0;
   text-transform: uppercase;
