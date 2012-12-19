@@ -1,0 +1,132 @@
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{font-size:100%;}
+a {outline: none;} /* Gets rid of Firefox's dotted borders */
+a img {border: none;} /* Gets rid of IE's blue borders */
+
+
+
+/** Background work */
+#right, #left {
+  position: fixed;
+  height: 100%;
+  width: 50%;
+  top: 0px;
+  z-index: 0;
+}
+
+#right {
+  right: 0;
+  background-color: #638759;
+}
+
+#left {
+  left: 0;
+  background-color: #81a677;
+}
+
+
+/** Toggle color */
+#toggle {
+  position: fixed;
+  z-index: 100;
+  background: rgba(256,256,256,0.3);
+  right: 0;
+  top: 0;
+  width: 3em;
+  height: 3em;
+  padding: 1em;
+}
+
+
+/** Center Areas */
+#middle {
+  position: relative;
+  margin: 23% auto 0 auto;
+  width: 24em;
+  height: 15em;
+  z-index: 100;
+}
+
+#middlebox {
+  position: absolute;
+  left: 12em;
+  width: 12.5em;
+  height: 15em;
+}
+
+#over {
+  position: absolute;
+  height: 14.5em;
+  width: 12em;
+  box-shadow: -1px 1px #e4c35f,
+              -2px 2px #e4c35f,
+              -3px 3px #e4c35f,
+              -4px 4px #e4c35f,
+              -5px 5px #e4c35f,
+              -6px 6px #e4c35f,
+              -7px 7px #e4c35f,
+              -8px 8px #e4c35f;
+  background-color: #f2d785;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  border-top: 1px solid #f7e9bd;
+  border-right: 1px solid #f7e9bd;
+}
+
+
+/** Content Boxes */
+#rightcontent, #leftcontent {
+  display: none;
+  background-color: #f4f2d2;
+  width: 100%;
+  height: 100%;
+}
+
+#leftcontent {
+  background-color: #638759;
+}
+
+
+/** Text styles */
+#over h1 {
+  color: #f25d50;
+  text-shadow: 1px -1px #ff9e96,
+              -1px 1px #b83f3b,
+              -2px 2px #b83f3b,
+              -3px 3px #b83f3b,
+              -4px 4px #b83f3b,
+              -6px 4px #e4c35f;
+  font-family: 'Josefin Sans';
+  font-weight: 900;
+  font-size: 5em;
+  padding: 0;
+  margin: 0 0 .05em 0;
+}
+
+#over a {
+  text-shadow: 0px 1px #f7e9bd;
+  font-family: 'Josefin Sans';
+  color: #e4c35f;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: .5em;
+  cursor: pointer;
+}
+
+#over a:hover, #over .active {
+  text-shadow: 0px 1px #b83f3b;
+  color: #f25d50;
+}
+
+#over a:active {
+  text-shadow: none;
+  color: #b83f3b;
+}
+
+
+/** Utilities */
+.smallpadding {
+  padding: 1.5em;
+}
